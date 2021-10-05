@@ -7,10 +7,10 @@ function App() {
   return (
     <div className="App">
       <Home />
+      {/* <Home />
       <Home />
       <Home />
-      <Home />
-      <Beranda />
+      <Beranda /> */}
     </div>
   );
 }
