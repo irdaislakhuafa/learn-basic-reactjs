@@ -16,7 +16,7 @@ export default class Child1 extends Component {
                 <button
                     className="btn-buy"
                     onClick={() => this.props.reduceStock(this.value)}
-                    disabled={this.props.stock == 0}
+                    disabled={this.props.stock === 0}
                 >
                     Beli</button>
             </div>
