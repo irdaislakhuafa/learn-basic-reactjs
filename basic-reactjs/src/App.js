@@ -1,9 +1,8 @@
 // import logo from './logo.svg';
 // import './App.css';
-import Beranda from './Component/Class/Beranda';
-import BootstrapComp from './Component/Class/BootstrapComp';
-import Parent from './Component/Class/ParentChild/Parent';
-import Home from './Component/Functional/Home';
+import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import { AboutComp } from './Component/Functional/RoutingComp/AboutComp';
+import { HomeComp } from './Component/Functional/RoutingComp/HomeComp';
 import { NavbarComp } from './Component/Functional/RoutingComp/NavbarComp';
 
 function App() {
@@ -13,6 +12,12 @@ function App() {
 			{/* <Parent /> */}
 			{/* <BootstrapComp /> */}
 			<NavbarComp brand="Irda Islakhu Afa" />
+			<BrowserRouter>
+				<Switch>
+					<Route exact path="/" component={HomeComp} />
+					<Route exact path="/about" component={AboutComp} />
+				</Switch>
+			</BrowserRouter>
 		</div>
 	);
 }
