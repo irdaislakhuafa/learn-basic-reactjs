@@ -29,24 +29,22 @@ export const NavbarComp = (props) => {
 				<Collapse isOpen={isOpen} navbar>
 					<Nav className="mr-auto" navbar>
 						<NavItem>
+							<NavLink href="/">Home</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href="/about">About</NavLink>
+						</NavItem>
+						<NavItem>
+							<NavLink href="/mahasiswa">Mahasiswa</NavLink>
+						</NavItem>
+						<NavItem>
 							<NavLink href="mailto:irdhaislakhuafa@gmail.com">Email</NavLink>
 						</NavItem>
 						<NavItem>
 							<NavLink href="https://github.com/reactstrap/reactstrap">GitHub</NavLink>
 						</NavItem>
-						<UncontrolledDropdown nav inNavbar>
-							<DropdownToggle nav caret>
-								Options
-							</DropdownToggle>
-							<DropdownMenu right>
-								<DropdownItem>Option 1</DropdownItem>
-								<DropdownItem>Option 2</DropdownItem>
-								<DropdownItem divider />
-								<DropdownItem>Reset</DropdownItem>
-							</DropdownMenu>
-						</UncontrolledDropdown>
 					</Nav>
-					<NavbarText>Simple Text</NavbarText>
+					<NavbarText className="ms-auto me-4">ADMIN</NavbarText>
 				</Collapse>
 			</Navbar>
 		</div>
