@@ -1,11 +1,12 @@
-import { Jumbotron, Button, Container } from 'reactstrap';
+import { Jumbotron, Button, Container, CardImg } from 'reactstrap';
 
 export const JumbotronComp = (props) => {
 	return (
 		<div>
 			<Container>
+				<CardImg className="img-responsive w-50 mx-auto d-block" src={props.imgSrc} />
 				<Jumbotron>
-					<h1 className="display-3">{props.title}</h1>
+					<h1 className="display-3 text-center mb-5 mt-2">{props.title}</h1>
 					<p className="lead">
 						This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to
 						featured content or information.

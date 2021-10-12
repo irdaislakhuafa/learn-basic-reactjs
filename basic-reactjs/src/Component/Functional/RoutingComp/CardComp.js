@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { Card, CardImg, CardText, CardBody, CardTitle, CardSubtitle, Button } from 'reactstrap';
 
 export const CardComp = (props) => {
@@ -13,7 +14,18 @@ export const CardComp = (props) => {
 					<CardText>
 						Some quick example text to build on the card title and make up the bulk of the card's content.
 					</CardText>
-					<Button color="success">Details</Button>
+					<Link
+						to={{
+							pathname: '/detail/' + props.id,
+							state: {
+								imgSrc: props.imgSrc,
+								title: props.title,
+								date: props.date
+							}
+						}}
+					>
+						<Button color="success">Details</Button>
+					</Link>
 				</CardBody>
 			</Card>
 		</div>
