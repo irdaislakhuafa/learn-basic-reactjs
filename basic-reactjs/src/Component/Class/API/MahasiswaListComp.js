@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Component } from 'react';
-import { Container, Row } from 'reactstrap';
+import { Container, Row, Table } from 'reactstrap';
 
 const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
 
@@ -25,9 +25,27 @@ export default class MahasiswaListComp extends Component {
 		return (
 			<div>
 				<Container>
-					<Row>
-						<h1 className="text-center">List Mahasiswa</h1>
-					</Row>
+					<h1 className="text-center mt-5">List Mahasiswa</h1>
+					<Table className="table table-striped">
+						{/* header */}
+						<thead>
+							<tr>
+								<th>Nama</th>
+								<th>NIM</th>
+								<th>Jurusan</th>
+								<th>Aksi</th>
+							</tr>
+						</thead>
+
+						{/* body */}
+						<tbody>
+							{this.state.mahasiswa.map((mahasiswa) => {
+								<tr key={mahasiswa.id}>
+									<td>{mahasiswa.nama}</td>
+								</tr>;
+							})}
+						</tbody>
+					</Table>
 				</Container>
 			</div>
 		);
