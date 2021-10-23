@@ -26,7 +26,7 @@ export default class MahasiswaListComp extends Component {
 			<div>
 				<Container>
 					<h1 className="text-center mt-5 pt-4">List Mahasiswa</h1>
-					<Table className="table table-striped">
+					<Table className="table table-striped" bordered>
 						{/* header */}
 						<thead>
 							<tr>
