@@ -30,8 +30,8 @@ export default class MahasiswaListComp extends Component {
 						{/* header */}
 						<thead>
 							<tr>
-								<th>Nama</th>
 								<th>NIM</th>
+								<th>Nama</th>
 								<th>Jurusan</th>
 								<th>Aksi</th>
 							</tr>
@@ -39,11 +39,11 @@ export default class MahasiswaListComp extends Component {
 
 						{/* body */}
 						<tbody>
-							{this.state.mahasiswa.map((mahasiswa) => {
-								<tr key={mahasiswa.id}>
+							{this.state.mahasiswa.map((mahasiswa) => (
+								<tr key={mahasiswa.idMahasiswa}>
 									<td>{mahasiswa.nama}</td>
-								</tr>;
-							})}
+								</tr>
+							))}
 						</tbody>
 					</Table>
 				</Container>
