@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 // import './App.css';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
+import MahasiswaListComp from './Component/Class/API/MahasiswaListComp';
 import { AboutComp } from './Component/Functional/RoutingComp/AboutComp';
 import { DetailComp } from './Component/Functional/RoutingComp/DetailComp';
 import { HomeComp } from './Component/Functional/RoutingComp/HomeComp';
@@ -18,6 +19,7 @@ function App() {
 					<Route exact path="/" component={HomeComp} />
 					<Route exact path="/about" component={AboutComp} />
 					<Route exact path="/detail/:id" component={DetailComp} />
+					<Route exact path="/mahasiswa" component={MahasiswaListComp} />
 				</Switch>
 			</BrowserRouter>
 		</div>
