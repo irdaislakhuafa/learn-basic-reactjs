@@ -21,7 +21,7 @@ export const NavbarComp = (props) => {
 
 	return (
 		<div>
-			<Navbar color="dark" dark expand="md">
+			<Navbar color="dark" dark expand="md" className="navbar fixed-top">
 				<NavbarBrand href="/" className="mx-4">
 					{props.brand}
 				</NavbarBrand>

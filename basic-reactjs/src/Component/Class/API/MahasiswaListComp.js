@@ -25,7 +25,7 @@ export default class MahasiswaListComp extends Component {
 		return (
 			<div>
 				<Container>
-					<h1 className="text-center mt-5">List Mahasiswa</h1>
+					<h1 className="text-center mt-5 pt-4">List Mahasiswa</h1>
 					<Table className="table table-striped">
 						{/* header */}
 						<thead>
@@ -41,7 +41,10 @@ export default class MahasiswaListComp extends Component {
 						<tbody>
 							{this.state.mahasiswa.map((mahasiswa) => (
 								<tr key={mahasiswa.idMahasiswa}>
+									<td>{mahasiswa.nim}</td>
 									<td>{mahasiswa.nama}</td>
+									<td>{mahasiswa.jurusan}</td>
+									<td>Edit | Hapus</td>
 								</tr>
 							))}
 						</tbody>
