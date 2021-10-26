@@ -1,8 +1,9 @@
 import axios from 'axios';
 import { Component } from 'react';
-import { Container, Row, Table } from 'reactstrap';
+import { Button, Container, NavLink, Row, Table } from 'reactstrap';
 
-const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
+// const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
+const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/simpleapi';
 
 export default class MahasiswaListComp extends Component {
 	constructor(props) {
@@ -25,7 +26,10 @@ export default class MahasiswaListComp extends Component {
 		return (
 			<div>
 				<Container>
-					<h1 className="text-center mt-5 pt-4">List Mahasiswa</h1>
+					<h1 className="text-center mt-5 pt-4 display-4">List Mahasiswa</h1>
+					<NavLink href="/mahasiswa/tambah">
+						<Button color="success">Tambah Data</Button>
+					</NavLink>
 					<Table className="table table-striped" bordered>
 						{/* header */}
 						<thead>

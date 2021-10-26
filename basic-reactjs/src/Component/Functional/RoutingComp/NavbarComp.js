@@ -1,18 +1,5 @@
 import React, { useState } from 'react';
-import {
-	Collapse,
-	Navbar,
-	NavbarToggler,
-	NavbarBrand,
-	Nav,
-	NavItem,
-	NavLink,
-	UncontrolledDropdown,
-	DropdownToggle,
-	DropdownMenu,
-	DropdownItem,
-	NavbarText
-} from 'reactstrap';
+import { Collapse, Nav, Navbar, NavbarBrand, NavbarText, NavbarToggler, NavItem, NavLink } from 'reactstrap';
 
 export const NavbarComp = (props) => {
 	const [ isOpen, setIsOpen ] = useState(false);

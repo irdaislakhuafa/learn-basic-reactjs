@@ -6,7 +6,7 @@ export const JumbotronComp = (props) => {
 			<Container>
 				<CardImg className="img-responsive w-50 mx-auto d-block" src={props.imgSrc} />
 				<Jumbotron>
-					<h1 className="display-3 text-center mb-5 mt-2">{props.title}</h1>
+					<h1 className="display-3 text-center mb-5 mt-5 pt-4">{props.title}</h1>
 					<p className="lead">
 						This is a simple hero unit, a simple Jumbotron-style component for calling extra attention to
 						featured content or information.
