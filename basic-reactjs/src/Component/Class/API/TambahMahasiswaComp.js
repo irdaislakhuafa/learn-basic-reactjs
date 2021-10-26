@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { Component } from 'react';
-import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
+import { Alert, Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import './Style.css';
 
 // const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
@@ -13,7 +13,10 @@ export default class TambahMahasiswaComp extends Component {
 			nim: '',
 			nama: '',
 			jurusan: '',
-			status: ''
+			status: '',
+			display: 'none',
+			alertStatus: '',
+			color: ''
 		};
 	}
 
@@ -31,9 +34,14 @@ export default class TambahMahasiswaComp extends Component {
 				jurusan: this.state.jurusan
 			})
 			.then((response) => {
-				this.setState({
-					status: response.data.status
-				});
+				console.log(response);
+				if (response.status == 200) {
+					this.setState({
+						status: 'Berhasil Menambah data!',
+						display: 'block',
+						color: 'success'
+					});
+				}
 			});
 	};
 
@@ -41,8 +49,16 @@ export default class TambahMahasiswaComp extends Component {
 		return (
 			<div>
 				<Container>
+					{/* title form */}
 					<h3 className="mt-5 pt-4 text-center">Tambah Data</h3>
 					<hr className="w-50 mx-auto border border-2 border-success" />
+
+					{/* alert */}
+					<div className="w-60">
+						<Alert color="success" style={{ display: this.state.display }}>
+							{this.state.status}
+						</Alert>
+					</div>
 					<Form>
 						<Row>
 							<Col className="col-sm-8 offset-sm-2">
