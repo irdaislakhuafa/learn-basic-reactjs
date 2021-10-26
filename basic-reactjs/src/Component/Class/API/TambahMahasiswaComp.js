@@ -13,16 +13,15 @@ export default class TambahMahasiswaComp extends Component {
 			nim: '',
 			nama: '',
 			jurusan: '',
-			status: '',
+			message: '',
 			display: 'none',
-			alertStatus: '',
 			color: ''
 		};
 	}
 
-	ifChange = (paramater) => {
+	ifChange = (input) => {
 		this.setState({
-			[paramater.target.name]: paramater.target.value
+			[input.target.name]: input.target.value
 		});
 	};
 
@@ -34,14 +33,13 @@ export default class TambahMahasiswaComp extends Component {
 				jurusan: this.state.jurusan
 			})
 			.then((response) => {
+				console.log('POST data mahasiswa to API');
 				console.log(response);
-				if (response.status == 200) {
-					this.setState({
-						status: 'Berhasil Menambah data!',
-						display: 'block',
-						color: 'success'
-					});
-				}
+				this.setState({
+					message: response.data.message,
+					display: 'block',
+					color: response.data.color
+				});
 			});
 	};
 
@@ -54,9 +52,9 @@ export default class TambahMahasiswaComp extends Component {
 					<hr className="w-50 mx-auto border border-2 border-success" />
 
 					{/* alert */}
-					<div className="w-60">
+					<div className="col-sm-8 offset-sm-2 p-2">
 						<Alert color="success" style={{ display: this.state.display }}>
-							{this.state.status}
+							{this.state.message}
 						</Alert>
 					</div>
 					<Form>
@@ -72,8 +70,8 @@ export default class TambahMahasiswaComp extends Component {
 											name="nim"
 											placeholder="Masukan NIM"
 											value={this.state.nim}
-											onChange={this.ifChange}
 											required="required"
+											onChange={this.ifChange}
 										/>
 									</FormGroup>
 
@@ -114,7 +112,7 @@ export default class TambahMahasiswaComp extends Component {
 
 										{/* kembali */}
 										<a href="/mahasiswa">
-											<Button color="danger" type="button">
+											<Button color="danger" type="button" onClick={this.sendDataMahasiswa}>
 												Kembali
 											</Button>
 										</a>
