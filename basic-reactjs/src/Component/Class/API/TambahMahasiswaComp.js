@@ -1,9 +1,10 @@
+import axios from 'axios';
 import { Component } from 'react';
 import { Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 import './Style.css';
 
 // const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
-const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/Ssimpleapi';
+const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/simpleapi';
 
 export default class TambahMahasiswaComp extends Component {
 	constructor(props) {
@@ -15,6 +16,26 @@ export default class TambahMahasiswaComp extends Component {
 			status: ''
 		};
 	}
+
+	ifChange = (paramater) => {
+		this.setState({
+			[paramater.target.name]: paramater.target.value
+		});
+	};
+
+	sendDataMahasiswa = () => {
+		axios
+			.post(apiUrl + '/mahasiswa', {
+				nim: this.state.nim,
+				nama: this.state.nama,
+				jurusan: this.state.jurusan
+			})
+			.then((response) => {
+				this.setState({
+					status: response.data.status
+				});
+			});
+	};
 
 	render() {
 		return (
@@ -35,6 +56,7 @@ export default class TambahMahasiswaComp extends Component {
 											name="nim"
 											placeholder="Masukan NIM"
 											value={this.state.nim}
+											onChange={this.ifChange}
 											required="required"
 										/>
 									</FormGroup>
@@ -49,6 +71,7 @@ export default class TambahMahasiswaComp extends Component {
 											placeholder="Masukan Nama Mahasiswa"
 											value={this.state.nama}
 											required="required"
+											onChange={this.ifChange}
 										/>
 									</FormGroup>
 
@@ -62,13 +85,14 @@ export default class TambahMahasiswaComp extends Component {
 											placeholder="Masukan Jurusan"
 											value={this.state.jurusan}
 											required="required"
+											onChange={this.ifChange}
 										/>
 									</FormGroup>
 
 									{/* button */}
 									<FormGroup>
 										{/* tambah */}
-										<Button color="success m-3" type="button">
+										<Button color="success m-3" type="button" onClick={this.sendDataMahasiswa}>
 											Tambah
 										</Button>
 
