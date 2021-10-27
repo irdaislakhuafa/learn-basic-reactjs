@@ -1,12 +1,11 @@
 import axios from 'axios';
 import { Component } from 'react';
 import { Alert, Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
-import './Style.css';
 
 // const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
 const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/simpleapi';
 
-export default class TambahMahasiswaComp extends Component {
+export default class TambahComp extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
@@ -33,7 +32,7 @@ export default class TambahMahasiswaComp extends Component {
 				jurusan: this.state.jurusan
 			})
 			.then((response) => {
-				console.log('POST data mahasiswa to API');
+				console.log('MAHASISWA -> TAMBAH DATA');
 				console.log(response);
 				this.setState({
 					message: response.data.message,
@@ -46,9 +45,9 @@ export default class TambahMahasiswaComp extends Component {
 	render() {
 		return (
 			<div>
-				<Container>
+				<Container className="mt-5 pt-5">
 					{/* title form */}
-					<h3 className="mt-5 pt-4 text-center">Tambah Data</h3>
+					<h2 className=" text-center">Tambah Data</h2>
 					<hr className="w-50 mx-auto border border-2 border-success" />
 
 					{/* alert */}

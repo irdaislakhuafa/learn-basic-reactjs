@@ -1,5 +1,6 @@
 import axios from 'axios';
 import { Component } from 'react';
+import { Link } from 'react-router-dom';
 import { Button, Container, NavLink, Table } from 'reactstrap';
 
 // const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
@@ -48,7 +49,30 @@ export default class MahasiswaListComp extends Component {
 									<td>{mahasiswa.nim}</td>
 									<td>{mahasiswa.nama}</td>
 									<td>{mahasiswa.jurusan}</td>
-									<td>Edit | Hapus</td>
+									<td>
+										{/* edit */}
+										<Link
+											className="m-2"
+											to={{
+												// destionantion for object
+												pathname: '/mahasiswa/edit',
+
+												// object
+												state: {
+													idMahasiswa: mahasiswa.idMahasiswa,
+													nim: mahasiswa.nim,
+													nama: mahasiswa.nama,
+													jurusan: mahasiswa.jurusan
+												}
+											}}
+										>
+											<Button color="primary">Edit</Button>
+										</Link>
+										{/* hapus */}
+										<Link>
+											<Button color="danger">Hapus</Button>
+										</Link>
+									</td>
 								</tr>
 							))}
 						</tbody>
