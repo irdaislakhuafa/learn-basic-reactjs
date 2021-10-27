@@ -130,7 +130,7 @@ export default class EditComp extends Component {
 									<FormGroup className="mb-sm-3">
 										<Button
 											color="primary"
-											className="m-3"
+											className="m-3 ms-0"
 											type="button"
 											onClick={() => this.updateDataMahasiswa(this.state.idMahasiswa)}
 										>

@@ -105,7 +105,7 @@ export default class TambahComp extends Component {
 									{/* button */}
 									<FormGroup>
 										{/* tambah */}
-										<Button color="success m-3" type="button" onClick={this.sendDataMahasiswa}>
+										<Button color="success m-3 ms-0" type="button" onClick={this.sendDataMahasiswa}>
 											Tambah
 										</Button>
 
