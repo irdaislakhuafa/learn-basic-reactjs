@@ -3,8 +3,8 @@ import { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { Button, Container, NavLink, Table } from 'reactstrap';
 
-// const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
-const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/simpleapi';
+const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
+// const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/simpleapi';
 
 export default class MahasiswaListComp extends Component {
 	constructor(props) {

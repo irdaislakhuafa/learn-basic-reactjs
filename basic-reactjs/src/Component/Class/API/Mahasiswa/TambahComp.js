@@ -2,8 +2,8 @@ import axios from 'axios';
 import { Component } from 'react';
 import { Alert, Button, Col, Container, Form, FormGroup, Input, Label, Row } from 'reactstrap';
 
-// const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
-const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/simpleapi';
+const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
+// const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/simpleapi';
 
 export default class TambahComp extends Component {
 	constructor(props) {

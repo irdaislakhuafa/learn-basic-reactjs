@@ -3,7 +3,8 @@ import { Alert, Button, Col, Container, Form, FormGroup, Input, Label, Row } fro
 import qs from 'querystring';
 import axios from 'axios';
 
-const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/simpleapi';
+const apiUrl = 'http://irdaislakhuafa.id/learn-reactjs/simpleapi';
+// const apiUrl = 'http://192.168.12.1:8081/learn-reactjs/simpleapi';
 
 export default class EditComp extends Component {
 	constructor(props) {
